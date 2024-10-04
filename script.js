@@ -1,29 +1,49 @@
 
 
-let display = document.getElementById('display'); 
+let display = document.getElementById('display');
+var resultStatus = false
 
-function displayInput(button){ 
+function displayInput(button) {
+
+    let inputValue = button.value;
+
+    if (resultStatus === true) {
+        display.value = inputValue
+        resultStatus = false
+    }
+
+    else {
+        display.value += inputValue;
+    }
     
+}
+
+function displayOperaator(button){
     let inputValue = button.value;
     let lastChar = display.value.slice(-1);
 
-  
     if (["sin", "cos", "tan"].includes(inputValue)) {
-        if (display.value !== "" && !isNaN(lastChar) && lastChar !== " ") {
+        if (display.value !== "" && !isNaN(lastChar) && lastChar !== "") {
             display.value += "*";
         }
         display.value += inputValue + "(";
+        resultStatus = false
     }
-    else{
+    
+    else {
         display.value += inputValue;
-        }
-  
-
+        resultStatus = false;
     }
 
-function evaluating(){
+}
+
+
+
+
+function evaluating() {
 
     let expression = display.value;
+
     try {
         // Function to evaluate trigonometric expressions
         const evaluateTrig = (expr, func) => {
@@ -33,7 +53,7 @@ function evaluating(){
             let evaluatedInnerExpression = eval(innerExpression[1]);
 
             if (isNaN(evaluatedInnerExpression)) throw "Invalid input";
-            switch(func) {
+            switch (func) {
                 case "sin":
                     return Math.sin(evaluatedInnerExpression * (Math.PI / 180));
                 case "cos":
@@ -44,8 +64,6 @@ function evaluating(){
                     throw "Invalid function";
             }
 
-            
-            
         };
         let openParentheses = (expression.match(/\(/g) || []).length;
         let closeParentheses = (expression.match(/\)/g) || []).length;
@@ -66,19 +84,30 @@ function evaluating(){
         if (expression.includes("tan(")) {
             result = result.replace(/tan\([^)]+\)/g, match => evaluateTrig(match, "tan"));
         }
+
         // Evaluating the final expression
+
         result = eval(result);
-        display.value = result;
-    } catch (error) {
-        display.value = "Error";
-    }   
+        
+        if (display.value === "") {
+            display.value = 0;
+            // alert("Hello world")
+        } else {
+            display.value = result;
+            resultStatus = true;
+        }
+
+        } catch (error) {
+            display.value = 'Error';
+            resultStatus = true
+            }
 }
 
-function clearDisplay(){
+function clearDisplay() {
     display.value = '';
 }
 
-function d(){
+function d() {
     // display.value = display.value.slice(0,-1);
     if (display.value.endsWith("sin(")) {
         display.value = display.value.slice(0, -4);

@@ -16,48 +16,47 @@
                     </div>
                 <div>
         
-                    <input type="button" class="operator bracket" value=" ( " onclick = displayInput(this)>
-                    <input type="button" class="operator bracket" value=" ) " onclick = displayInput(this)>
+                    <input type="button" class="operator bracket" value=" ( " onclick = displayOperaator(this)>
+                    <input type="button" class="operator bracket" value=" ) " onclick = displayOperaator(this)>
                 </div>
                 <div>
                     <input type="button" class="btn" value="DE" onclick = d()>
                     <input type="button" class="btn" value="7" onclick = displayInput(this)>
                     <input type="button" class="btn" value="8" onclick = displayInput(this)>
                     <input type="button" class="btn" value="9" onclick = displayInput(this)>
-                    <input type="button" class="operator" value=" + " onclick = displayInput(this)>
+                    <input type="button" class="operator" value=" + " onclick = displayOperaator(this)>
                 </div>
                 <div>
-                    <input type="button" class="operator" id='tan' value= "tan" onclick = displayInput(this)>
+                    <input type="button" class="operator" id='tan' value= "tan" onclick = displayOperaator(this)>
                     <input type="button" class="btn" value="4" onclick = displayInput(this)>
                     <input type="button" class="btn" value="5" onclick = displayInput(this)>
                     <input type="button" class="btn" value="6" onclick = displayInput(this)>
-                    <input type="button" class="operator" value=" - " onclick = displayInput(this)>
+                    <input type="button" class="operator" value=" - " onclick = displayOperaator(this)>
                     
                 </div>
                 <div>
-                    <input type="button" class="operator" value=cos  id='cos' onclick = displayInput(this)>
+                    <input type="button" class="operator" value=cos  id='cos' onclick = displayOperaator(this)>
                     <input type="button" class="btn" value="1" onclick = displayInput(this)>
                     <input type="button" class="btn" value="2" onclick = displayInput(this)>
                     <input type="button" class="btn" value="3" onclick = displayInput(this)>
-                    <input type="button" class="operator" value=" / " onclick = displayInput(this)>
+                    <input type="button" class="operator" value=" / " onclick = displayOperaator(this)>
                 </div>
                 <div>
-                    <input type="button" class="operator" value="sin" id='sin' onclick = displayInput(this) >
+                    <input type="button" class="operator" value="sin" id='sin' onclick = displayOperaator(this)>
                     <input type="button" class="btn" value="0" onclick = displayInput(this)>
                     <input type="button" class="btn" value="." onclick = displayInput(this)>
                     <input type="button" class="btn" value="00"onclick = displayInput(this)> 
-                    <input type="button" class="operator" value=" * " onclick = displayInput(this)>
+                    <input type="button" class="operator" value=" * " onclick = displayOperaator(this)>
                 </div>
                 <div>
                     <input type="button" class= "btn" value="AC" onclick = clearDisplay(this)>
-                    <input type="button" class="operator" id="equal" value="=" onclick=evaluating() onCLick="console()">
+                    <input type="button" class="operator" id="equal" value="=" onclick=evaluating()>
                 </div>
         </form>
     </div>
 </div>
-
-
-
+ 
+ 
 
 
     <script src="./script.js">
