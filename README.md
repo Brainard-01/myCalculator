@@ -58,7 +58,7 @@ Contributions are welcome! Feel free to:
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the Copyright (c) [2024] [Brainard-01] file for details.
+This project is licensed under the MIT License. See the [LICENSE](Copyright (c) [2024] [Brainard-01]) file for details.
 
 ---
 
